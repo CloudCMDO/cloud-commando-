@@ -1,17 +1,13 @@
-resource "google_storage_bucket" "my-bucket" {
-  name                     = "tt-githubdemo-bucket-3"
-  project                  = "tt-dev-001"
-  location                 = "US"
-  force_destroy            = true
-  public_access_prevention = "enforced"
+provider "google" {
+  project = "prefab-faculty-438111-k7"  # Replace with your GCP project ID
+  region  = "us-central1"          # Replace with your preferred region
 }
-#
-resource "google_storage_bucket" "my-bucket2" {
-  name                     = "tt-githubdemo-bucket-002"
-  project                  = "tt-dev-001"
-  location                 = "US"
-  force_destroy            = true
-  public_access_prevention = "enforced"
+
+resource "google_storage_bucket" "amitpawar65_bucket" {
+  name     = "amitpawar65"         # The bucket name must be globally unique
+  location = "US"                  # Location where your bucket will be created
+
+  # Optional: Add any bucket configurations you need
+  force_destroy = true             # Set to true if you want to delete all objects when destroying the bucket
 }
-#
-### dummy
+
