@@ -47,4 +47,12 @@ pipeline {
                 }
             }
     }
-}
+post {
+        success {
+            echo 'SonarCloud analysis completed successfully.'
+        }
+        failure {
+            echo 'SonarCloud analysis failed.'
+        }
+    }
+}	
