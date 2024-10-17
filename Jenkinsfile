@@ -7,9 +7,9 @@ pipeline {
     }
 	
     stages {
-        stage('Git Checkout') {
+        stage('Checkout') {
             steps {
-               git "https://${GIT_TOKEN}@github.com/CloudCMDO/cloud-commando-.git"
+                git branch: 'Dev1', url: 'https://github.com/CloudCMDO/cloud-commando-.git'
             }
         }
         
@@ -28,12 +28,6 @@ pipeline {
                 }
             }
         }
-
-	    //stage('Manual Approval') {
-            //steps {
-             //   input "Approve?"
-           // }
-      //  }
 	    
         stage('Terraform Apply') {
             steps {
