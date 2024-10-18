@@ -3,7 +3,7 @@ provider "google" {
   region  = "us-central1"
 }
 resource "google_storage_bucket" "amitpawar65_bucket" {
-  name     = "amitpawar65"         
+  name     = "Cloud commando"         
   location = "US"                  
   force_destroy = true             
 }
