@@ -37,4 +37,42 @@ pipeline {
             }
         }
 
-    }	
+        stage('SonarCloud Analysis') {
+            steps {
+                script {
+                    def scannerHome = tool 'SonarQube Scanner'
+                    withSonarQubeEnv('SonarCloud')
+                        sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=your_project_key -Dsonar.organization=your_org -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${SONAR_TOKEN}"
+                    }
+                }
+            }
+        }
+    
+     post {
+        success {
+            echo 'SonarCloud analysis completed successfully.'
+        }
+        failure {
+            echo 'SonarCloud analysis failed.'
+        }
+    }
+     stage('SonarCloud Analysis') {
+            steps {
+                script {
+                    def scannerHome = tool 'SonarQube Scanner'
+                    withSonarQubeEnv('SonarCloud')
+                        sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=your_project_key -Dsonar.organization=your_org -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${SONAR_TOKEN}"
+                    }
+                }
+            }
+        
+     post {
+        success {
+            echo 'SonarCloud analysis completed successfully.'
+        }
+        failure {
+            echo 'SonarCloud analysis failed.'
+        }
+    }
+}
+	    
