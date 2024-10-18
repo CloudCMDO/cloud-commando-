@@ -28,11 +28,13 @@ pipeline {
                 }
             }
         }
-        //stage('Manual Approval') {
-        //steps {
-        //   input "Approve?"
+
+        // Uncomment this stage if manual approval is needed
+        // stage('Manual Approval') {
+        //     steps {
+        //         input "Approve?"
+        //     }
         // }
-        //  }
 
         stage('Terraform Apply') {
             steps {
