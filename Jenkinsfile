@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         GOOGLE_APPLICATION_CREDENTIALS = credentials('gcp-key')
-	GIT_TOKEN = credentials('git-token')
+        GIT_TOKEN = credentials('git-token')
     }
 
     stages {
@@ -28,11 +28,11 @@ pipeline {
                 }
             }
         }
-	    //stage('Manual Approval') {
-            //steps {
-             //   input "Approve?"
-           // }
-      //  }
+        //stage('Manual Approval') {
+        //steps {
+        //   input "Approve?"
+        // }
+        //  }
 
         stage('Terraform Apply') {
             steps {
