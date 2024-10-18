@@ -41,7 +41,6 @@ pipeline {
                 script {
                     sh 'terraform apply tfplan'
                 }
-                }
             }
         }
     }
