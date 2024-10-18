@@ -37,22 +37,6 @@ pipeline {
             }
         }
 
-        stage('SonarCloud Analysis') {
-             steps {
-                 script {
-                     def scannerHome = tool 'SonarQube Scanner'
-                     withSonarQubeEnv('SonarCloud')
-                         sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=CloudCMDO_cloud-commando- -Dsonar.organization=your_org -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${sonarcloud-token}"
-                    }
-                }
-            }
+        
     }
-post {
-        success {
-            echo 'SonarCloud analysis completed successfully.'
-        }
-        failure {
-            echo 'SonarCloud analysis failed.'
-        }
-    }
-}	
+	
